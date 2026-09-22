@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Samuel Roger — Editor de vídeo</title>
+<meta name="description" content="Portfólio de edição de vídeo de Samuel Roger: filmes de marca, série documental de obra, depoimentos, anúncios e motion design.">
+<meta property="og:title" content="Samuel Roger — Editor de vídeo">
+<meta property="og:description" content="Filmes de marca, série documental, depoimentos, anúncios e motion design.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#080808; --bg2:#0e0e0e; --li:#171717;
+  --tx:#f2f2f2; --tx2:#8d8d8d; --tx3:#5e5e5e;
+  --ac:#e8e2d6;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg); color:var(--tx);
+  font-family:'Inter',-apple-system,system-ui,sans-serif;
+  font-weight:300; -webkit-font-smoothing:antialiased;
+  line-height:1.55;
+}
+.wrap{max-width:1240px;margin:0 auto;padding:0 28px}
+
+/* ---------- HERO ---------- */
+header{padding:120px 0 74px; position:relative; overflow:hidden}
+header:after{
+  content:''; position:absolute; left:50%; top:-260px; width:760px; height:520px;
+  transform:translateX(-50%); pointer-events:none;
+  background:radial-gradient(ellipse at center, rgba(232,226,214,.07), transparent 65%);
+}
+.eyebrow{
+  font-size:11px; letter-spacing:.34em; text-transform:uppercase;
+  color:var(--tx3); margin-bottom:26px;
+}
+h1{
+  font-family:'Instrument Serif',Georgia,serif; font-weight:400;
+  font-size:clamp(46px,7.6vw,96px); line-height:.98; letter-spacing:-.02em;
+}
+h1 em{font-style:italic; color:var(--ac)}
+.sub{
+  margin-top:26px; max-width:620px; font-size:17px; color:var(--tx2);
+}
+.sub strong{color:var(--tx); font-weight:400}
+.nums{display:flex; gap:44px; margin-top:44px; flex-wrap:wrap}
+.nums div span{
+  display:block; font-family:'Instrument Serif',serif; font-size:32px; color:var(--tx);
+}
+.nums div small{
+  font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--tx3);
+}
+
+/* ---------- FILTRO ---------- */
+.bar{
+  position:sticky; top:0; z-index:20; background:rgba(8,8,8,.86);
+  backdrop-filter:blur(14px); border-bottom:1px solid var(--li);
+  padding:16px 0;
+}
+.chips{display:flex; gap:8px; overflow-x:auto; scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{
+  flex:0 0 auto; background:none; border:1px solid #232323; color:var(--tx2);
+  font:inherit; font-size:12.5px; letter-spacing:.02em;
+  padding:8px 16px; border-radius:100px; cursor:pointer;
+  transition:.22s;
+}
+.chip:hover{border-color:#383838; color:var(--tx)}
+.chip.on{background:var(--ac); border-color:var(--ac); color:#0a0a0a}
+
+/* ---------- GRADE ---------- */
+main{padding:58px 0 40px}
+.grade{
+  display:grid; gap:34px 26px;
+  grid-template-columns:repeat(auto-fill,minmax(268px,1fr));
+}
+.p{opacity:1; transition:opacity .25s}
+.p.off{display:none}
+.tela{
+  position:relative; background:var(--bg2); border:1px solid var(--li);
+  border-radius:10px; overflow:hidden; cursor:pointer;
+  transition:border-color .25s, transform .25s;
+}
+.tela.vert{aspect-ratio:9/16}
+.tela.hor{aspect-ratio:16/9}
+.p:hover .tela{border-color:#333; transform:translateY(-3px)}
+.tela video{width:100%; height:100%; object-fit:cover; display:block}
+.play{
+  position:absolute; inset:0; margin:auto; width:54px; height:54px;
+  border:none; border-radius:50%; background:rgba(10,10,10,.55);
+  backdrop-filter:blur(6px); cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+  transition:.22s;
+}
+.play svg{width:22px; height:22px; fill:#fff; margin-left:2px}
+.tela:hover .play{background:rgba(232,226,214,.92)}
+.tela:hover .play svg{fill:#0a0a0a}
+.tela.playing .play{opacity:0; pointer-events:none}
+.dur{
+  position:absolute; right:9px; bottom:9px; font-size:11px; letter-spacing:.04em;
+  background:rgba(8,8,8,.7); padding:2px 7px; border-radius:4px; color:#d8d8d8;
+}
+.txt{padding:15px 2px 0}
+.tag{
+  font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:var(--tx3);
+}
+h3{font-size:17px; font-weight:400; margin:7px 0 3px; letter-spacing:-.01em}
+.cli{font-size:12.5px; color:var(--ac); opacity:.72; margin-bottom:8px}
+.lin{font-size:13px; color:var(--tx2); line-height:1.55}
+
+/* ---------- COMO EU TRABALHO ---------- */
+.metodo{border-top:1px solid var(--li); margin-top:60px; padding:74px 0 10px}
+.metodo h2{
+  font-family:'Instrument Serif',serif; font-weight:400; font-size:34px;
+  margin-bottom:38px; letter-spacing:-.01em;
+}
+.cols{display:grid; gap:30px; grid-template-columns:repeat(auto-fit,minmax(248px,1fr))}
+.cols div h4{font-size:14px; font-weight:500; margin-bottom:9px}
+.cols div p{font-size:13.5px; color:var(--tx2)}
+.cols div span{
+  display:block; font-family:'Instrument Serif',serif; font-size:22px;
+  color:var(--tx3); margin-bottom:13px;
+}
+
+/* ---------- RODAPE ---------- */
+footer{
+  border-top:1px solid var(--li); margin-top:74px; padding:52px 0 76px;
+  display:flex; justify-content:space-between; gap:26px; flex-wrap:wrap;
+  align-items:flex-end;
+}
+footer .nome{font-family:'Instrument Serif',serif; font-size:26px}
+footer .zap{font-size:13px; color:var(--tx2)}
+footer a{color:var(--ac); text-decoration:none; border-bottom:1px solid #2c2c2c}
+footer a:hover{border-color:var(--ac)}
+@media(max-width:560px){
+  header{padding:76px 0 52px}
+  .nums{gap:28px}
+  .grade{grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:26px 16px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <p class="eyebrow">Editor de vídeo · Brasília</p>
+    <h1>Samuel Roger<br><em>editor</em> de vídeo</h1>
+    <p class="sub">Trabalho com <strong>material bruto de verdade</strong>: drone, celular do cliente, entrega de obra, casamento, palestra de quatro horas. Abaixo estão as peças que foram aprovadas e publicadas.</p>
+    <div class="nums">
+      <div><span>44</span><small>peças aprovadas</small></div>
+      <div><span>11</span><small>frentes de trabalho</small></div>
+      <div><span>40 mil</span><small>views no melhor episódio</small></div>
+    </div>
+  </div>
+</header>
+
+<div class="bar"><div class="wrap"><div class="chips"><button class="chip on" data-f="todos">Tudo</button><button class="chip" data-f="Filme institucional">Filme institucional</button><button class="chip" data-f="Filme de marca">Filme de marca</button><button class="chip" data-f="Série documental">Série documental</button><button class="chip" data-f="Depoimento">Depoimento</button><button class="chip" data-f="Anúncio">Anúncio</button><button class="chip" data-f="Motion design">Motion design</button><button class="chip" data-f="Imagem gerada">Imagem gerada</button><button class="chip" data-f="Clipe corporativo">Clipe corporativo</button><button class="chip" data-f="Reel">Reel</button></div></div></div>
+
+<main><div class="wrap"><div class="grade"><article class="p" data-cat="Filme institucional"><div class="tela vert"><video src="v/cv_DI_urUBRYBO.mp4" poster="capa/cv_DI_urUBRYBO.jpg" preload="none" playsinline loop muted></video><button class="play" aria-label="Reproduzir Ela conta como foi"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button><span class="dur">1:48</span></div><div class="txt"><span class="tag">Filme institucional</span><h3>Ela conta como foi</h3><p class="cli">Câmera profissional</p><p class="lin">Câmera profissional, finalizado em Adobe, com cor tratada.</p></div></article><article class="p" data-cat="Filme institucional"><div class="tela vert"><video src="v/cv_DJRmv1DRQr_.mp4" poster="capa/cv_DJRmv1DRQr_.jpg" preload="none" playsinline loop muted></video><button class="play" aria-label="Reproduzir Ensaio no campo"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button><span class="dur">2:56</span></div><div class="txt"><span class="tag">Filme institucional</span><h3>Ensaio no campo</h3><p class="cli">Câmera profissional</p><p class="lin">Ensaio no fim da tarde, em luz natural.</p></div></article><article class="p" data-cat="Filme institucional"><div class="tela vert"><video src="v/cv_DXfWjfckdoC.mp4" poster="capa/cv_DXfWjfckdoC.jpg" preload="none" playsinline loop muted></video><button class="play" aria-label="Reproduzir O arquiteto apresenta o projeto"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button><span class="dur">0:59</span></div><div class="txt"><span class="tag">Filme institucional</span><h3>O arquiteto apresenta o projeto</h3><p class="cli">Convívio Arquitetura</p><p class="lin">O arquiteto falando direto para a câmera, sobre o próprio projeto.</p></div></article><article class="p" data-cat="Filme de marca"><div class="tela vert"><video src="v/al_DXwG2qAhvvh.mp4" poster="capa/al_DXwG2qAhvvh.jpg" preload="none" playsinline loop muted></video><button class="play" aria-label="Reproduzir Casa Moed"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button><span class="dur">0:58</span></div><div class="txt"><span class="tag">Filme de marca</span><h3>Casa Moed</h3><p class="cli">Alessandra Moussa</p><p class="lin">Apresentação do projeto pelo nome que ele recebeu. Publicado no perfil da arquiteta.</p></div></article><article class="p" data-cat="Filme institucional"><div class="tela vert"><video src="v/cv_DZLmL35xeWA.mp4" poster="capa/cv_DZLmL35xeWA.jpg" preload="none" playsinline loop muted></video><button class="play" aria-label="Reproduzir A casa por dentro"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button><span class="dur">1:22</span></div><div class="txt"><span class="tag">Filme institucional</span><h3>A casa por dentro</h3><p class="cli">Convívio Arquitetura</p><p class="lin">Apresentação da casa por dentro.</p></div></article><article class="p" data-cat="Filme institucional"><div class="tela vert"><video src="v/cv_DLTArjGx2YK.mp4" poster="capa/cv_DLTArjGx2YK.jpg" preload="none" playsinline loop muted></video><button class="play" aria-label="Reproduzir A festa"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button><span class="dur">2:20</span></div><div class="txt"><span class="tag">Filme institucional</span><h3>A festa</h3><p class="cli">Câmera profissional</p><p class="lin">Registro de festa, com o som do ambiente preservado.</p></div></article><article class="p" data-cat="Filme institucional"><div class="tela vert"><video src="v/cv_DE0bl8cxkOc.mp4" poster="capa/cv_DE0bl8cxkOc.jpg" preload="none" playsinline loop muted></video><button class="play" aria-label="Reproduzir O dia no sítio"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button><span class="dur">1:04</span></div><div class="txt"><span class="tag">Filme institucional</span><h3>O dia no sítio</h3><p class="cli">Câmera profissional</p><p class="lin">Cobertura de um dia inteiro condensada em poucos minutos.</p></div></article><article class="p" data-cat="Filme institucional"><div class="tela vert"><video src="v/cv_DI34clCxogG.mp4" poster="capa/cv_DI34clCxogG.jpg" preload="none" playsinline loop muted></video><button class="play" aria-label="Reproduzir O ensaio"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button><span class="dur">2:28</span></div><div class="txt"><span class="tag">Filme institucional</span><h3>O ensaio</h3><p class="cli">Câmera profissional</p><p class="lin">Ensaio em plano fechado, com atenção ao detalhe.</p></div></article><article class="p" data-cat="Filme de marca"><div class="tela vert"><video src="v/al_DdbZUZ8IH2f.mp4" poster="capa/al_DdbZUZ8IH2f.jpg" preload="none" playsinline loop muted></video><button class="play" aria-label="Reproduzir Casa Berit"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button><span class="dur">1:24</span></div><div class="txt"><span class="tag">Filme de marca</span><h3>Casa Berit</h3><p class="cli">Alessandra Moussa</p><p class="lin">O vídeo que revela o nome do projeto para os clientes e para o público.</p></div></article><article class="p" data-cat="Filme de marca"><div class="tela vert"><video src="v/al_Dcb3jn-Iu47.mp4" poster="capa/al_Dcb3jn-Iu47.jpg" preload="none" playsinline loop muted></video><button class="play" aria-label="Reproduzir Casa Bossa Nova"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button><span class="dur">3:27</span></div><div class="txt"><span class="tag">Filme de marca</span><h3>Casa Bossa Nova</h3><p class="cli">Alessandra Moussa</p><p class="lin">Mais de um ano de obra no Lago Sul, contado em um filme só.</p></div></article><article class="p" data-cat="Filme de marca"><div class="tela vert"><video src="v/al_DdUCqoEI0bn.mp4" poster="capa/al_DdUCqoEI0bn.jpg" preload="none" playsinline loop muted></video><button class="play" aria-label="Reproduzir Casa Chesed"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button><span class="dur">1:37</span></div><div class="txt"><span class="tag">Filme de marca</span><h3>Casa Chesed</h3><p class="cli">Alessandra Moussa</p><p class="lin">Casa térrea no Park Way, da obra até a entrega.</p></div></article><article class="p" data-cat="Filme de marca"><div class="tela vert"><video src="v/al_DZfLOKvoOPH.mp4" poster="capa/al_DZfLOKvoOPH.jpg" preload="none" playsinline loop muted></video><button class="play" aria-label="Reproduzir Casa Leblon 3"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button><span class="dur">0:39</span></div><div class="txt"><span class="tag">Filme de marca</span><h3>Casa Leblon 3</h3><p class="cli">Alessandra Moussa</p><p class="lin">Projeto entregue, apresentado em formato curto para o feed.</p></div></article><article class="p" data-cat="Série documental"><div class="tela vert"><video src="v/al_Da6LxvyIH16.mp4" poster="capa/al_Da6LxvyIH16.jpg" preload="none" playsinline loop muted></video><button class="play" aria-label="Reproduzir Casa Blessed"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button><span class="dur">1:07</span></div><div class="txt"><span class="tag">Série documental</span><h3>Casa Blessed</h3><p class="cli">Alessandra Moussa</p><p class="lin">Acompanhamento de obra: estrutura, etapa por etapa, antes do acabamento.</p></div></article><article class="p" data-cat="Série documental"><div class="tela vert"><video src="v/ap1.mp4" poster="capa/ap1.jpg" preload="none" playsinline loop muted></video><button class="play" aria-label="Reproduzir Episódio 1 — A aposta"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button><span class="dur">1:29</span></div><div class="txt"><span class="tag">Série documental</span><h3>Episódio 1 — A aposta</h3><p class="cli">Série documental de obra</p><p class="lin">Episódio 1 da série que documenta a construção de um prédio, do terreno à entrega.</p></div></article><article class="p" data-cat="Série documental"><div class="tela vert"><video src="v/ap2.mp4" poster="capa/ap2.jpg" preload="none" playsinline loop muted></video><button class="play" aria-label="Reproduzir Episódio 2 — Será que a gente termina hoje?"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button><span class="dur">1:30</span></div><div class="txt"><span class="tag">Série documental</span><h3>Episódio 2 — Será que a gente termina hoje?</h3><p class="cli">Série documental de obra</p><p class="lin">O episódio que passou de 40 mil visualizações.</p></div></article><article class="p" data-cat="Série documental"><div class="tela vert"><video src="v/ap3.mp4" poster="capa/ap3.jpg" preload="none" playsinline loop muted></video><button class="play" aria-label="Reproduzir Episódio 3 — O terreno limpo"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button><span class="dur">1:16</span></div><div class="txt"><span class="tag">Série documental</span><h3>Episódio 3 — O terreno limpo</h3><p class="cli">Série documental de obra</p><p class="lin">Um dia de limpeza do terreno, com começo, meio e virada.</p></div></article><article class="p" data-cat="Série documental"><div class="tela vert"><video src="v/ap4.mp4" poster="capa/ap4.jpg" preload="none" playsinline loop muted></video><button class="play" aria-label="Reproduzir Episódio 4 — Sete dias de fundação"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button><span class="dur">1:29</span></div><div class="txt"><span class="tag">Série documental</span><h3>Episódio 4 — Sete dias de fundação</h3><p class="cli">Série documental de obra</p><p class="lin">Sete dias de fundação explicados para quem nunca viu uma obra.</p></div></article><article class="p" data-cat="Série documental"><div class="tela vert"><video src="v/ap5.mp4" poster="capa/ap5.jpg" preload="none" playsinline loop muted></video><button class="play" aria-label="Reproduzir Episódio 5 — As paredes sobem"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button><span class="dur">1:02</span></div><div class="txt"><span class="tag">Série documental</span><h3>Episódio 5 — As paredes sobem</h3><p class="cli">Série documental de obra</p><p class="lin">Cinco dias de alvenaria em um episódio.</p></div></article><article class="p" data-cat="Série documental"><div class="tela vert"><video src="v/ap6.mp4" poster="capa/ap6.jpg" preload="none" playsinline loop muted></video><button class="play" aria-label="Reproduzir Episódio 6 — O primeiro andar fechado"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button><span class="dur">1:25</span></div><div class="txt"><span class="tag">Série documental</span><h3>Episódio 6 — O primeiro andar fechado</h3><p class="cli">Série documental de obra</p><p class="lin">Recapitulação do zero até a primeira laje.</p></div></article><article class="p" data-cat="Série documental"><div class="tela vert"><video src="v/al_DbtK8_soKeH.mp4" poster="capa/al_DbtK8_soKeH.jpg" preload="none" playsinline loop muted></video><button class="play" aria-label="Reproduzir O lago de pedra"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button><span class="dur">1:23</span></div><div class="txt"><span class="tag">Série documental</span><h3>O lago de pedra</h3><p class="cli">Alessandra Moussa</p><p class="lin">Bastidor da construção de um lago natural, rocha por rocha.</p></div></article><article class="p" data-cat="Depoimento"><div class="tela vert"><video src="v/vestida.mp4" poster="capa/vestida.jpg" preload="none" playsinline loop muted></video><button class="play" aria-label="Reproduzir A reforma"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button><span class="dur">1:34</span></div><div class="txt"><span class="tag">Depoimento</span><h3>A reforma</h3><p class="cli">Casa Vestida · Arquitetura</p><p class="lin">Depoimento gravado no celular. Sem zoom e sem câmera lenta — o ritmo vem do corte.</p></div></article><article class="p" data-cat="Depoimento"><div class="tela vert"><video src="v/cv_DY2OvsBRc5w.mp4" poster="capa/cv_DY2OvsBRc5w.jpg" preload="none" playsinline loop muted></video><button class="play" aria-label="Reproduzir Depoimentos"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button><span class="dur">3:24</span></div><div class="txt"><span class="tag">Depoimento</span><h3>Depoimentos</h3><p class="cli">Convívio Arquitetura</p><p class="lin">Vários depoimentos em um filme só.</p></div></article><article class="p" data-cat="Anúncio"><div class="tela vert"><video src="v/intensive1.mp4" poster="capa/intensive1.jpg" preload="none" playsinline loop muted></video><button class="play" aria-label="Reproduzir Assoalho pélvico"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button><span class="dur">0:26</span></div><div class="txt"><span class="tag">Anúncio</span><h3>Assoalho pélvico</h3><p class="cli">Intensive Pilates</p><p class="lin">Anúncio de 26 segundos. Um assunto só, plano novo a cada 2,5 segundos.</p></div></article><article class="p" data-cat="Anúncio"><div class="tela vert"><video src="v/intensive2.mp4" poster="capa/intensive2.jpg" preload="none" playsinline loop muted></video><button class="play" aria-label="Reproduzir Dor nas costas"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button><span class="dur">0:30</span></div><div class="txt"><span class="tag">Anúncio</span><h3>Dor nas costas</h3><p class="cli">Intensive Pilates</p><p class="lin">Anúncio de captação de aluno, feito para rodar no Instagram.</p></div></article><article class="p" data-cat="Anúncio"><div class="tela vert"><video src="v/int3.mp4" poster="capa/int3.jpg" preload="none" playsinline loop muted></video><button class="play" aria-label="Reproduzir Dor que volta sempre"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button><span class="dur">0:30</span></div><div class="txt"><span class="tag">Anúncio</span><h3>Dor que volta sempre</h3><p class="cli">Intensive Pilates</p><p class="lin">Anúncio de captação. Um problema, uma explicação, uma ação no fim.</p></div></article><article class="p" data-cat="Anúncio"><div class="tela vert"><video src="v/pomar2.mp4" poster="capa/pomar2.jpg" preload="none" playsinline loop muted></video><button class="play" aria-label="Reproduzir O dia, hora por hora"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button><span class="dur">0:46</span></div><div class="txt"><span class="tag">Anúncio</span><h3>O dia, hora por hora</h3><p class="cli">Espaço Belo Pomar · Eventos</p><p class="lin">O mesmo espaço contado pelo horário da festa, da montagem à última música.</p></div></article><article class="p" data-cat="Anúncio"><div class="tela vert"><video src="v/pomar1.mp4" poster="capa/pomar1.jpg" preload="none" playsinline loop muted></video><button class="play" aria-label="Reproduzir O espaço"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button><span class="dur">0:45</span></div><div class="txt"><span class="tag">Anúncio</span><h3>O espaço</h3><p class="cli">Espaço Belo Pomar · Eventos</p><p class="lin">Anúncio de 45 segundos para tráfego pago, com legenda no tempo da fala.</p></div></article><article class="p" data-cat="Anúncio"><div class="tela vert"><video src="v/int4.mp4" poster="capa/int4.jpg" preload="none" playsinline loop muted></video><button class="play" aria-label="Reproduzir Perto de casa"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button><span class="dur">0:31</span></div><div class="txt"><span class="tag">Anúncio</span><h3>Perto de casa</h3><p class="cli">Intensive Pilates</p><p class="lin">Versão 6 do mesmo anúncio. Cada versão nasceu de um número da campanha.</p></div></article><article class="p" data-cat="Anúncio"><div class="tela vert"><video src="v/int5.mp4" poster="capa/int5.jpg" preload="none" playsinline loop muted></video><button class="play" aria-label="Reproduzir Quinze segundos"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button><span class="dur">0:15</span></div><div class="txt"><span class="tag">Anúncio</span><h3>Quinze segundos</h3><p class="cli">Intensive Pilates</p><p class="lin">Corte curto do anúncio de 30 s, para testar qual prende mais.</p></div></article><article class="p" data-cat="Motion design"><div class="tela vert"><video src="v/seguidores.mp4" poster="capa/seguidores.jpg" preload="none" playsinline loop muted></video><button class="play" aria-label="Reproduzir Seguidores comprados"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button><span class="dur">2:00</span></div><div class="txt"><span class="tag">Motion design</span><h3>Seguidores comprados</h3><p class="cli">Conteúdo próprio</p><p class="lin">Motion design, sem filmagem: tela de celular refeita em código.</p></div></article><article class="p" data-cat="Imagem gerada"><div class="tela vert"><video src="v/cv_DYLP2E1RGeI.mp4" poster="capa/cv_DYLP2E1RGeI.jpg" preload="none" playsinline loop muted></video><button class="play" aria-label="Reproduzir Fachada e living — imagem gerada"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button><span class="dur">0:56</span></div><div class="txt"><span class="tag">Imagem gerada</span><h3>Fachada e living — imagem gerada</h3><p class="cli">Convívio Arquitetura</p><p class="lin">Da fachada para dentro de casa, em imagem gerada.</p></div></article><article class="p" data-cat="Imagem gerada"><div class="tela vert"><video src="v/cv_DXUW3OKkZsS.mp4" poster="capa/cv_DXUW3OKkZsS.jpg" preload="none" playsinline loop muted></video><button class="play" aria-label="Reproduzir Interiores — imagem gerada"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button><span class="dur">0:59</span></div><div class="txt"><span class="tag">Imagem gerada</span><h3>Interiores — imagem gerada</h3><p class="cli">Convívio Arquitetura</p><p class="lin">Sala, banheiro e quarto do mesmo projeto, em imagem gerada.</p></div></article><article class="p" data-cat="Imagem gerada"><div class="tela vert"><video src="v/cv_DWt2EX4Edkp.mp4" poster="capa/cv_DWt2EX4Edkp.jpg" preload="none" playsinline loop muted></video><button class="play" aria-label="Reproduzir Residência — imagem gerada"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button><span class="dur">1:01</span></div><div class="txt"><span class="tag">Imagem gerada</span><h3>Residência — imagem gerada</h3><p class="cli">Convívio Arquitetura</p><p class="lin">Projeto apresentado por imagem gerada, tratada até parecer foto.</p></div></article><article class="p" data-cat="Imagem gerada"><div class="tela vert"><video src="v/cv_DW4591fkZkd.mp4" poster="capa/cv_DW4591fkZkd.jpg" preload="none" playsinline loop muted></video><button class="play" aria-label="Reproduzir Área gourmet — imagem gerada"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button><span class="dur">0:51</span></div><div class="txt"><span class="tag">Imagem gerada</span><h3>Área gourmet — imagem gerada</h3><p class="cli">Convívio Arquitetura</p><p class="lin">Área externa do projeto, em imagem gerada.</p></div></article><article class="p" data-cat="Clipe corporativo"><div class="tela vert"><video src="v/cad3.mp4" poster="capa/cad3.jpg" preload="none" playsinline loop muted></video><button class="play" aria-label="Reproduzir A sua autoimagem"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button><span class="dur">0:58</span></div><div class="txt"><span class="tag">Clipe corporativo</span><h3>A sua autoimagem</h3><p class="cli">Cadeiras Design · Treinamento</p><p class="lin">Trecho de palestra ao vivo, com áudio tratado e legenda.</p></div></article><article class="p" data-cat="Clipe corporativo"><div class="tela vert"><video src="v/cad4.mp4" poster="capa/cad4.jpg" preload="none" playsinline loop muted></video><button class="play" aria-label="Reproduzir Não adianta mudar só por fora"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button><span class="dur">1:03</span></div><div class="txt"><span class="tag">Clipe corporativo</span><h3>Não adianta mudar só por fora</h3><p class="cli">Cadeiras Design · Treinamento</p><p class="lin">O trecho mais longo da leva: a ideia inteira, sem picotar o raciocínio.</p></div></article><article class="p" data-cat="Clipe corporativo"><div class="tela vert"><video src="v/cad1.mp4" poster="capa/cad1.jpg" preload="none" playsinline loop muted></video><button class="play" aria-label="Reproduzir Qual é o seu porquê"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button><span class="dur">0:44</span></div><div class="txt"><span class="tag">Clipe corporativo</span><h3>Qual é o seu porquê</h3><p class="cli">Cadeiras Design · Treinamento</p><p class="lin">Recorte de um treinamento de quatro horas. Uma câmera, três enquadramentos.</p></div></article><article class="p" data-cat="Reel"><div class="tela vert"><video src="v/cv_DYmtIqWRvUB.mp4" poster="capa/cv_DYmtIqWRvUB.jpg" preload="none" playsinline loop muted></video><button class="play" aria-label="Reproduzir Bastidor do projeto"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button><span class="dur">1:03</span></div><div class="txt"><span class="tag">Reel</span><h3>Bastidor do projeto</h3><p class="cli">Convívio Arquitetura</p><p class="lin">O que acontece antes da entrega do projeto.</p></div></article><article class="p" data-cat="Reel"><div class="tela vert"><video src="v/cv_DXuPYUtEUSj.mp4" poster="capa/cv_DXuPYUtEUSj.jpg" preload="none" playsinline loop muted></video><button class="play" aria-label="Reproduzir Conversa com o arquiteto"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button><span class="dur">1:03</span></div><div class="txt"><span class="tag">Reel</span><h3>Conversa com o arquiteto</h3><p class="cli">Convívio Arquitetura</p><p class="lin">Peça curta de feed, um assunto só.</p></div></article><article class="p" data-cat="Reel"><div class="tela vert"><video src="v/vtech2.mp4" poster="capa/vtech2.jpg" preload="none" playsinline loop muted></video><button class="play" aria-label="Reproduzir Farol amarelado"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button><span class="dur">0:18</span></div><div class="txt"><span class="tag">Reel</span><h3>Farol amarelado</h3><p class="cli">VTECH · Escola de mecânica</p><p class="lin">Reel de conhecimento técnico para motorista de caminhão.</p></div></article><article class="p" data-cat="Reel"><div class="tela vert"><video src="v/vtech.mp4" poster="capa/vtech.jpg" preload="none" playsinline loop muted></video><button class="play" aria-label="Reproduzir Mais um pra estrada"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button><span class="dur">0:36</span></div><div class="txt"><span class="tag">Reel</span><h3>Mais um pra estrada</h3><p class="cli">VTECH · Escola de mecânica</p><p class="lin">Reel de oficina de caminhão, com o som do pátio no lugar da trilha.</p></div></article><article class="p" data-cat="Reel"><div class="tela vert"><video src="v/fh2.mp4" poster="capa/fh2.jpg" preload="none" playsinline loop muted></video><button class="play" aria-label="Reproduzir O serviço por dentro"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button><span class="dur">0:46</span></div><div class="txt"><span class="tag">Reel</span><h3>O serviço por dentro</h3><p class="cli">FHTECH · Reformadora</p><p class="lin">Segundo vídeo da leva, mostrando o processo de reforma.</p></div></article><article class="p" data-cat="Reel"><div class="tela vert"><video src="v/cv_DY74TS3DASS.mp4" poster="capa/cv_DY74TS3DASS.jpg" preload="none" playsinline loop muted></video><button class="play" aria-label="Reproduzir Projeto em detalhe"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button><span class="dur">1:54</span></div><div class="txt"><span class="tag">Reel</span><h3>Projeto em detalhe</h3><p class="cli">Convívio Arquitetura</p><p class="lin">Peça curta de feed, um assunto só.</p></div></article><article class="p" data-cat="Reel"><div class="tela vert"><video src="v/fh1.mp4" poster="capa/fh1.jpg" preload="none" playsinline loop muted></video><button class="play" aria-label="Reproduzir Reforma de caminhão"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button><span class="dur">0:29</span></div><div class="txt"><span class="tag">Reel</span><h3>Reforma de caminhão</h3><p class="cli">FHTECH · Reformadora</p><p class="lin">Peça de feed da reformadora, gravada no pátio da oficina.</p></div></article></div></div></main>
+
+
+
+<footer><div class="wrap" style="display:flex;justify-content:space-between;gap:26px;flex-wrap:wrap;align-items:flex-end;width:100%">
+  <div>
+    <p class="nome">Samuel Roger</p>
+    <p class="zap">Edição de vídeo · Brasília, DF</p>
+  </div>
+  <p class="zap">Portfólio pessoal · setembro de 2026</p>
+</div></footer>
+
+<script>
+document.querySelectorAll('.chip').forEach(function(b){
+  b.addEventListener('click', function(){
+    document.querySelectorAll('.chip').forEach(function(x){x.classList.remove('on')});
+    b.classList.add('on');
+    var f = b.dataset.f;
+    document.querySelectorAll('.p').forEach(function(p){
+      p.classList.toggle('off', f !== 'todos' && p.dataset.cat !== f);
+    });
+  });
+});
+document.querySelectorAll('.tela').forEach(function(t){
+  var v = t.querySelector('video');
+  t.addEventListener('click', function(){
+    if (v.paused) {
+      document.querySelectorAll('.tela video').forEach(function(o){
+        if (o !== v) { o.pause(); o.parentElement.classList.remove('playing'); }
+      });
+      v.muted = false; v.play(); t.classList.add('playing');
+    } else { v.pause(); t.classList.remove('playing'); }
+  });
+  v.addEventListener('ended', function(){ t.classList.remove('playing'); });
+});
+</script>
+</body>
+</html>
